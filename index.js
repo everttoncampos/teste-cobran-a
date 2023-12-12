@@ -1,4 +1,4 @@
-import GoogleSpreadsheet from 'google-spreadsheet';
+const GoogleSpreadsheet = require('google-spreadsheet');
 // const credentials = require('./credentials.json');
 // const JWT = require('google-auth-library');
 
