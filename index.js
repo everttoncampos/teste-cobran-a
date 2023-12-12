@@ -1,6 +1,6 @@
-const GoogleSpreadsheet = require('google-spreadsheet');
-const credentials = require('./credentials.json');
-const JWT = require('google-auth-library');
+import GoogleSpreadsheet from 'google-spreadsheet';
+// const credentials = require('./credentials.json');
+// const JWT = require('google-auth-library');
 
 // const serviceAccountAuth = new JWT.JWT ({
 //     email:credentials.client_email,
