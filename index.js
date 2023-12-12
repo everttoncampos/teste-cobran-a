@@ -15,10 +15,10 @@ const docIdteste = "1FKDu53W5dQD99nvv6-b7ldGr-U7ZWXOo_rQDRirLcMk";
 const docTeste = new GoogleSpreadsheet.GoogleSpreadsheet(docIdteste, serviceAccountAuth);
 
 const loadSheetMes = async function (){
-    await docTeste.loadInfo();
+    await docTeste.loadInfo()
 
-    const sheet = await docTeste.sheetsByIndex[0];
-    const rows = await sheet.getRows();
+    const sheet = await docTeste.sheetsByIndex[0]
+    const rows = await sheet.getRows()
 
     // let dados = []
 
@@ -34,16 +34,16 @@ const loadSheetMes = async function (){
             Parcela: item.get('N Parcela')
         }
 
-    });
+    })
 
     // let dia = dados[1].Data.split('/')[0]
     // let mes = dados[1].Data.split('/')[1]
     // let ano = dados[1].Data.split('/')[2]
     // console.log(`O dia de vencimento desse cliente é: ${dia}, do mês ${mes}, do ano ${ano}`)
-    console.log(dados);
+    console.log(dados)
 
-    return dados;
-};
+    return dados
+}
 
 const loadSheetFevereiro = async function (){
 

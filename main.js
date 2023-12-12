@@ -25,7 +25,7 @@ client.on('ready', async () => {
 
 client.on('message', async msg => {
 
-    console.log(msg)
+    // console.log(msg)
 
     
     if (msg.body === '#menu') {
@@ -35,8 +35,6 @@ client.on('message', async msg => {
         console.log('Menu enviado para client!')
 
     }else if (msg.body === "1" || msg.body === '01' || msg.bdoy === 'Janeiro' || msg.body === '01 - Janeiro') {
-
-        let mes = 0
 
         const data = await loadSheetMes()
 
