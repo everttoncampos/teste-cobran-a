@@ -35,7 +35,7 @@ client.on('message', async msg => {
 
         let mes = 0
 
-        const data = await loadSheetMes(mes)
+        const data = await loadSheetMes()
 
         // const listaEnviados = []
 

@@ -71,9 +71,9 @@ const loadSheetFevereiro = async function (){
 }
 
 console.log('Rodou')
-loadSheetMes()
-// dadosClientes = {
-//     loadSheetMes,
-//     loadSheetFevereiro
-// }
+// loadSheetMes()
+dadosClientes = {
+    loadSheetMes,
+    loadSheetFevereiro
+}
 // module.exports = dadosClientes
