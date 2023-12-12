@@ -1,0 +1,20 @@
+{
+  "name": "app-cobrancas-whatsapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "google-auth-library": "^9.2.0",
+    "google-spreadsheet": "^4.1.1",
+    "puppeteer": "^19.11.1",
+    "qrcode-terminal": "^0.12.0",
+    "socket.io": "^4.7.2",
+    "whatsapp-web.js": "^1.23.*"
+  }
+}
