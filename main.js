@@ -26,7 +26,7 @@ client.on('ready', async () => {
 
 client.on('message', async msg => {
 
-    if (msg.from === '556599681385@c.us' && msg.body === '!iniciar') {
+    if (msg.body === '!iniciar') {
         await client.sendMessage(msg.from, `
         Olá ${msg.notifyname}, aqui é o RobMaster,
         Estou aqui para te ajudar com o envio das mensagens para os seus clientes.
