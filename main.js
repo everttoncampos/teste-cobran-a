@@ -33,7 +33,7 @@ client.on('message', async msg => {
     } else if (msg.body.toLowerCase() === 'novembro/23') {
         const ano = 2023
         const index = 0
-        const data = await loadSheet(ano, index)
+        const data = await loadSheet()
 
         for await (const item of data) {
             if (item['Status'] == 'Inadimplente'){
