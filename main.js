@@ -27,21 +27,9 @@ client.on('ready', async () => {
 client.on('message', async msg => {
 
     if (msg.body === '!iniciar') {
-        await client.sendMessage(msg.from, `
-        Olá ${msg.notifyname}, aqui é o RobMaster,
-        Estou aqui para te ajudar com o envio das mensagens para os seus clientes.
-        Escolha agora o ano que dejesa começar:
-        - 2023;
-        - 2024;
-        `)
+        await client.sendMessage(msg.from, `Olá, aqui é o RobMaster,\n\nEstou aqui para te ajudar com o envio das mensagens para os seus clientes.\n\nEscolha agora o ano que dejesa começar:\n\n- 2023;\n- 2024;`)
     } else if (msg.body === '2023') {
-        await client.sendMessage(msg.from, `
-        Muito bem, por qual mês deseja começar os envios:
-
-        - Novembro/23;
-        - Dezembro/23;
-        - Anteriores/23;
-        `)
+        await client.sendMessage(msg.from, `Muito bem, por qual mês deseja começar os envios:\n\n- Novembro/23;\n- Dezembro/23;\n- Anteriores/23;`)
     } else if (msg.body.toLowerCase() === 'novembro/23') {
         const data = await loadSheet(2023, 0)
 
