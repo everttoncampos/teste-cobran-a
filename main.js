@@ -43,18 +43,10 @@ client.on('message', async msg => {
 
                     setTimeout(async () => {
 
-                        await client.sendMessage(fone, `
-                        Olá, *${nome}*, aqui é da *MasterCell*,
-                        
-                        Não identificamos o pagamento da sua notinha que venceu dia *${data}*, no valor de *${valor}*.
-                        
-                        Caso ache mas cômodo podemos te encaminhar o nosso *pix*.
-                        
-                        Caso já tenha efetuado o pagamento, ignore a mensagem.
-                        `)
+                        await client.sendMessage(fone, `Olá, *${nome}*, aqui é o *BiroBot*,\n\nNão identificamos o pagamento da sua notinha que venceu dia *${data}*, no valor de *${valor}*.\n\nCaso ache mas cômodo podemos te encaminhar o nosso *pix*.\n\nCaso já tenha efetuado o pagamento, ignore a mensagem.`)
     
-                        await client.sendMessage(fone, 'Segue chave pix abaixo, é o nosso número de telefone.')
-                        await client.sendMessage(fone, '65999117777')
+                        await client.sendMessage(fone, 'Segue chave pix abaixo:')
+                        await client.sendMessage(fone, '05359593113')
 
                     }, 2500)
                 }
