@@ -38,7 +38,7 @@ client.on('message', async msg => {
         for await (const item of data) {
             if (item['Status'] == 'Inadimplente'){
                 if (!isNaN(item['Telefone'])){
-                    let fone = `${item[Telefone]}@c.us`
+                    let fone = `${item['Telefone']}@c.us`
                     let nome = item['Nome']
                     let data = item['Data']
                     let valor = item['Valor']
