@@ -31,7 +31,9 @@ client.on('message', async msg => {
     } else if (msg.body === '2023') {
         await client.sendMessage(msg.from, `Muito bem, por qual mês deseja começar os envios:\n\n- Novembro/23;\n- Dezembro/23;\n- Anteriores/23;`)
     } else if (msg.body.toLowerCase() === 'novembro/23') {
-        const data = await loadSheet(2023, 0)
+        const ano = 2023
+        const index = 0
+        const data = await loadSheet(ano, index)
 
         for await (const item of data) {
             if (item['Status'] == 'Inadimplente'){
