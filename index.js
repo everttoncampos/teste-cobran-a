@@ -18,7 +18,7 @@ const sheetYear = {
 }
 
 const loadSheet = async function (ano, i){
-    const doc = new GoogleSpreadsheet.GoogleSpreadsheet(sheetYear.ano, serviceAccountAuth);
+    const doc = new GoogleSpreadsheet.GoogleSpreadsheet(ano, serviceAccountAuth);
     await doc.loadInfo()
 
     const sheet = await doc.sheetsByIndex[i]
