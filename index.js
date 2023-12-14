@@ -11,15 +11,17 @@ const serviceAccountAuth = new JWT.JWT ({
     ]
 })
 
-const sheetYear = {
-    2023: process.env.ID_SHEETS_TESTE
-}
+// const sheetYear = {
+//     2023: process.env.ID_SHEETS_TESTE
+// }
+const docId = process.env.ID_SHEETS_TESTE
 
-const loadSheet = async function (ano, i){
-    const doc = new GoogleSpreadsheet.GoogleSpreadsheet(sheetYear[ano], serviceAccountAuth);
+const doc = new GoogleSpreadsheet.GoogleSpreadsheet(docId, serviceAccountAuth);
+
+const loadSheet = async function (){
     await doc.loadInfo()
 
-    const sheet = await doc.sheetsByIndex[i]
+    const sheet = await doc.sheetsByIndex[0]
     const rows = await sheet.getRows()
 
     // let dados = []
