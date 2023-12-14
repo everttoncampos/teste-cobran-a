@@ -1,4 +1,4 @@
-const { loadSheet } = require("./index")
+const loadSheet  = require("./index")
 const { Client, LocalAuth, ClientInfo } = require('whatsapp-web.js')
 const qrcode = require('qrcode-terminal')
 require('dotenv').config()

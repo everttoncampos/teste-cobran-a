@@ -50,4 +50,6 @@ const loadSheet = async function (){
     return dados
 }
 
+// loadSheet()
+
 module.exports = loadSheet
