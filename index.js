@@ -1,6 +1,7 @@
 const GoogleSpreadsheet = require('google-spreadsheet')
 const credentials = require('./credentials.json')
 const JWT = require('google-auth-library')
+require('dotenv').config()
 
 const serviceAccountAuth = new JWT.JWT ({
     email:credentials.client_email,
@@ -10,14 +11,17 @@ const serviceAccountAuth = new JWT.JWT ({
     ]
 })
 
-// const docIdteste = "1J4IeLYGcgCAaPM7KHBCYjPO23tnLM9A5r5L3KNUtDWk"
-const docIdteste = "1FKDu53W5dQD99nvv6-b7ldGr-U7ZWXOo_rQDRirLcMk"
-const docTeste = new GoogleSpreadsheet.GoogleSpreadsheet(docIdteste, serviceAccountAuth)
+const sheetYear = {
+    2023: process.env.ID_SHEETS_2023,
+    2024: process.env.ID_SHEETS_2024,
+    teste: process.env.ID_SHEETS_TESTE
+}
 
-const loadSheetMes = async function (){
-    await docTeste.loadInfo()
+const loadSheet = async function (ano, i){
+    const doc = new GoogleSpreadsheet.GoogleSpreadsheet(sheetYear.ano, serviceAccountAuth);
+    await doc.loadInfo()
 
-    const sheet = await docTeste.sheetsByIndex[0]
+    const sheet = await doc.sheetsByIndex[i]
     const rows = await sheet.getRows()
 
     // let dados = []
@@ -31,7 +35,8 @@ const loadSheetMes = async function (){
             Valor: item.get('Valor'),
             Status: item.get('Status'),
             Data: item.get('Data-vencimento'),
-            Parcela: item.get('N Parcela')
+            Parcela: item.get('N Parcela'),
+            OBS: item.get('OBS.:')
         }
 
     })
@@ -45,35 +50,4 @@ const loadSheetMes = async function (){
     return dados
 }
 
-const loadSheetFevereiro = async function (){
-
-    await docTeste.loadInfo()
-
-   const sheet = await docTeste.sheetsByIndex[1]
-   const rows = await sheet.getRows()
-
-   let dados = []
-
-   rows.map(item => {
-
-       dados.push({
-           'Nome': item.get('Nome'),
-           'Telefone': item.get('Telefone'),
-           'Valor': item.get('Valor'),
-           'Status': item.get('Status')
-       })
-
-   })
-
-   console.log(dados)
-
-   return dados
-}
-
-console.log('Rodou')
-// loadSheetMes()
-dadosClientes = {
-    loadSheetMes,
-    loadSheetFevereiro
-}
-module.exports = dadosClientes
+module.exports = loadSheet
